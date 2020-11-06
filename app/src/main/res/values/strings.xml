@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Would You Rather - Date Edition</string>
+    <string name="id_banner_ad">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="id_rewarded_ad">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="button_ad_premium">View ad for Premium Choice</string>
+
+    <string name="dialog_rate_title">Give some feedback?</string>
+    <string name="dialog_rate_message">We are sure other people will value your opinion</string>
+    <string name="dialog_rate_button_no"><u>Don\'t ask again</u></string>
+    <string name="dialog_rate_button_ok">Sure, I will</string>
+
+    <string name="dialog_pop_up_title">Congrats!</string>
+    <string name="dialog_pop_up_message_rewarded_ad">You’ve received 1 Premium choice.\n\n
+        Tap on Get More to check out all Premium options.</string>
+
+    <string name="dialog_pop_up_message_purchased">You’ve purchased the Fantasy set: 20 new options have been added to your deck.\n\n
+        You can select and deselect decks by tapping on them in the main screen top bar.</string>
+
+</resources>

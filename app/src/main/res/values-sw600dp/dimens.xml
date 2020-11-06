@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_ad_padding">10dp</dimen>
+    <dimen name="button_options_padding">8dp</dimen>
+    <dimen name="button_options_text_size">22sp</dimen>
+    <dimen name="button_ad_text_size">18sp</dimen>
+    <dimen name="percentage_text_size">20sp</dimen>
+    <dimen name="dialog_title_text_size">26sp</dimen>
+    <dimen name="dialog_message_text_size">20sp</dimen>
+    <dimen name="dialog_button_ok_text_size">15sp</dimen>
+    <dimen name="dialog_button_no_text_size">13sp</dimen>
+    <dimen name="dialog_congrats_title_text_size">50sp</dimen>
+    <dimen name="dialog_congrats_message_text_size">24sp</dimen>
+    <dimen name="shop_card_title_text_size">50sp</dimen>
+    <dimen name="shop_card_message_text_size">20sp</dimen>
+    <dimen name="shop_card_message_2_text_size">20sp</dimen>
+    <dimen name="shop_card_button_text_size">20sp</dimen>
+</resources>

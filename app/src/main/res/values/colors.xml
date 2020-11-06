@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="button_a">#ff5d87</color>
+    <color name="button_b">#ec7dfe</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorButtonDefault">#23a610</color>
+    <color name="colorButtonPressed">#08e557</color>
+    <color name="colorButtonDialogCancel">#A5A8A4</color>
+    <color name="colorBackgroundTitleDialog">#e4618d</color>
+    <color name="colorBackgroundDialog">#f4bade</color>
+</resources>
