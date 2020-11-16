@@ -1,8 +1,8 @@
-package com.campfiregames.WYRDate.repository;
+package com.androidgames.WYRDate.repository;
 
 import android.content.Context;
 
-import com.campfiregames.WYRDate.repository.Entity.Scenario;
+import com.androidgames.WYRDate.repository.Entity.Scenario;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;

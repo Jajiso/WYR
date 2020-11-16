@@ -1,6 +1,6 @@
-package com.campfiregames.WYRDate.Interface;
+package com.androidgames.WYRDate.Interface;
 
-import com.campfiregames.WYRDate.repository.Entity.Scenario;
+import com.androidgames.WYRDate.repository.Entity.Scenario;
 
 import java.util.ArrayList;
 

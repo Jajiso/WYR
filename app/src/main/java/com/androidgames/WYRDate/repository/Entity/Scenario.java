@@ -1,4 +1,4 @@
-package com.campfiregames.WYRDate.repository.Entity;
+package com.androidgames.WYRDate.repository.Entity;
 
 public class Scenario
 {

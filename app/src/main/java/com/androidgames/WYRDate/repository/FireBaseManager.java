@@ -1,9 +1,9 @@
-package com.campfiregames.WYRDate.repository;
+package com.androidgames.WYRDate.repository;
 
 import androidx.annotation.NonNull;
 
-import com.campfiregames.WYRDate.Interface.CallbacksDB;
-import com.campfiregames.WYRDate.repository.Entity.Scenario;
+import com.androidgames.WYRDate.Interface.CallbacksDB;
+import com.androidgames.WYRDate.repository.Entity.Scenario;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 

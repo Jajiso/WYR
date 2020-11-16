@@ -1,4 +1,4 @@
-package com.campfiregames.WYRDate.interactor;
+package com.androidgames.WYRDate.interactor;
 
 import com.android.billingclient.api.Purchase;
 

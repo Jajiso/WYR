@@ -1,13 +1,13 @@
-package com.campfiregames.WYRDate.interactor;
+package com.androidgames.WYRDate.interactor;
 
 import android.content.Context;
 
 import com.android.billingclient.api.Purchase;
-import com.campfiregames.WYRDate.Interface.CallbacksDB;
-import com.campfiregames.WYRDate.Interface.InteractorListener;
-import com.campfiregames.WYRDate.repository.Entity.Scenario;
-import com.campfiregames.WYRDate.repository.FireBaseManager;
-import com.campfiregames.WYRDate.repository.JSONManager;
+import com.androidgames.WYRDate.Interface.CallbacksDB;
+import com.androidgames.WYRDate.Interface.InteractorListener;
+import com.androidgames.WYRDate.repository.Entity.Scenario;
+import com.androidgames.WYRDate.repository.FireBaseManager;
+import com.androidgames.WYRDate.repository.JSONManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.campfiregames.WYRDate.presenter;
+package com.androidgames.WYRDate.presenter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,9 +21,9 @@ import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
 import com.android.billingclient.api.SkuDetailsResponseListener;
-import com.campfiregames.WYRDate.Interface.IShopView;
-import com.campfiregames.WYRDate.base.BasePresenter;
-import com.campfiregames.WYRDate.interactor.ShopActivityInteractor;
+import com.androidgames.WYRDate.Interface.IShopView;
+import com.androidgames.WYRDate.base.BasePresenter;
+import com.androidgames.WYRDate.interactor.ShopActivityInteractor;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 

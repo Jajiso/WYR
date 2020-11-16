@@ -1,4 +1,4 @@
-package com.campfiregames.WYRDate.view;
+package com.androidgames.WYRDate.view;
 
 import androidx.annotation.NonNull;
 
@@ -14,12 +14,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.campfiregames.WYRDate.Interface.IShopView;
-import com.campfiregames.WYRDate.R;
-import com.campfiregames.WYRDate.base.BaseActivity;
-import com.campfiregames.WYRDate.interactor.ShopActivityInteractor;
-import com.campfiregames.WYRDate.presenter.ShopActivityPresenter;
-import com.campfiregames.WYRDate.repository.Popup.PopUpDialog;
+import com.androidgames.WYRDate.Interface.IShopView;
+import com.androidgames.WYRDate.R;
+import com.androidgames.WYRDate.base.BaseActivity;
+import com.androidgames.WYRDate.interactor.ShopActivityInteractor;
+import com.androidgames.WYRDate.presenter.ShopActivityPresenter;
+import com.androidgames.WYRDate.repository.Popup.PopUpDialog;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 

@@ -1,4 +1,4 @@
-package com.campfiregames.WYRDate.base;
+package com.androidgames.WYRDate.base;
 
 import android.content.Intent;
 import android.os.Bundle;

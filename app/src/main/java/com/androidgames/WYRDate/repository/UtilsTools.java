@@ -1,4 +1,4 @@
-package com.campfiregames.WYRDate.repository;
+package com.androidgames.WYRDate.repository;
 
 import java.util.Random;
 

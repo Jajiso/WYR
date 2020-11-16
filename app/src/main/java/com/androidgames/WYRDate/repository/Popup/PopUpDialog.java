@@ -1,4 +1,4 @@
-package com.campfiregames.WYRDate.repository.Popup;
+package com.androidgames.WYRDate.repository.Popup;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
-import static com.campfiregames.WYRDate.repository.Popup.IntentHelper.createIntentForGooglePlay;
-import static com.campfiregames.WYRDate.repository.Popup.PreferenceHelper.*;
+import static com.androidgames.WYRDate.repository.Popup.IntentHelper.createIntentForGooglePlay;
+import static com.androidgames.WYRDate.repository.Popup.PreferenceHelper.*;
 
 public final class PopUpDialog {
 

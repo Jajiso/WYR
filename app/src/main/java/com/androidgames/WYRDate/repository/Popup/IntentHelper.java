@@ -1,10 +1,10 @@
-package com.campfiregames.WYRDate.repository.Popup;
+package com.androidgames.WYRDate.repository.Popup;
 
 import android.content.Context;
 import android.content.Intent;
 
-import static com.campfiregames.WYRDate.repository.Popup.UriHelper.getGooglePlay;
-import static com.campfiregames.WYRDate.repository.Popup.UriHelper.isPackageExists;
+import static com.androidgames.WYRDate.repository.Popup.UriHelper.getGooglePlay;
+import static com.androidgames.WYRDate.repository.Popup.UriHelper.isPackageExists;
 
 final class IntentHelper {
 
