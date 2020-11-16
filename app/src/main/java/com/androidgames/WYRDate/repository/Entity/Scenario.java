@@ -35,7 +35,6 @@ public class Scenario
         this.category = category;
     }
 
-
     public String getOptionA() {
         return optionA;
     }

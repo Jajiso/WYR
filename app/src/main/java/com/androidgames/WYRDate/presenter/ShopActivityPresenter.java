@@ -27,8 +27,6 @@ import com.campfiregames.WYRDate.interactor.ShopActivityInteractor;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +37,6 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
 
     private ArrayList<String> skuList;
     private BillingClient billingClient;
-
 
     public ShopActivityPresenter(@NonNull IShopView shopView, ShopActivityInteractor interactor) {
         this.mShopActivity = shopView;
@@ -58,22 +55,14 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
     @Override
     public void onStart() {
         super.onStart();
-
         mShopActivity.hideLayoutFantasy();
         mShopActivity.hideLayoutHot();
 
-        //mShopActivity.createLayoutHot(true, null);
-        //mShopActivity.createLayoutFantasy(false, null);
-        //shopView.hideLayoutHot();
-        //shopView.hideLayoutFantasy();
-        //shopView.showProgressBarShop();
         setupBillingClient();
-
         new LoadAds().execute();
     }
 
     public void setupBillingClient() {
-
         billingClient = BillingClient.newBuilder((Context) mShopActivity)
                 .setListener(this)
                 .enablePendingPurchases()
@@ -90,7 +79,7 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
                 } else {
                     mShopActivity.hideProgressBarShop();
                     mShopActivity.showReconnectShop();
-                    Toast.makeText((Context) mShopActivity, "xbcvxbvxcbvcxbvcxbvcx" + billingResult, Toast.LENGTH_LONG).show();
+                    Toast.makeText((Context) mShopActivity, "Something went wrong!" + billingResult, Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -115,25 +104,13 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
                 @Override
                 public void onSkuDetailsResponse(@NonNull BillingResult billingResult, @Nullable List<SkuDetails> list) {
 
-                    Toast.makeText((Context) mShopActivity, "dentro de skuDrtailsResponse", Toast.LENGTH_LONG).show();
-
                     if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK && list != null) {
-
-                        Toast.makeText((Context) mShopActivity, "dentro del if, la lista no esta vacia!!", Toast.LENGTH_LONG).show();
                         List<Purchase> purchases = billingClient.queryPurchases(BillingClient.SkuType.INAPP).getPurchasesList();
-
                         for (final SkuDetails details : list) {
-
-                            Toast.makeText((Context) mShopActivity, "dentro foreach", Toast.LENGTH_LONG).show();
-
                             if (details.getSku().equals(skuList.get(0))) {
-
-                                Toast.makeText((Context) mShopActivity, "dentro de hot_choices", Toast.LENGTH_LONG).show();
                                 mShopActivity.showLayoutHot();
                                 if (purchases != null && mInteractor.isProductOwned(details.getSku(), purchases)) {
-
                                     mShopActivity.createLayoutHot(true, null);
-
                                 } else {
                                     mShopActivity.createLayoutHot(false, new View.OnClickListener() {
                                         @Override
@@ -146,14 +123,10 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
                                     });
                                 }
                             } else if (details.getSku().equals(skuList.get(1))) {
-
-                                Toast.makeText((Context) mShopActivity, "Dentro de fantasy_choice", Toast.LENGTH_LONG).show();
                                 mShopActivity.showLayoutFantasy();
                                 if (purchases != null && mInteractor.isProductOwned(details.getSku(), purchases)) {
-
                                     mShopActivity.createLayoutFantasy(true, null);
                                 } else {
-
                                     mShopActivity.createLayoutFantasy(false, new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
@@ -169,9 +142,8 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
                         }
                     } else {
                         mShopActivity.showReconnectShop();
-                        Toast.makeText((Context) mShopActivity, "Something go wrong!", Toast.LENGTH_LONG).show();
+                        Toast.makeText((Context) mShopActivity, "Something went wrong!", Toast.LENGTH_LONG).show();
                     }
-
                 }
             });
         } else {
@@ -179,7 +151,6 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
             Toast.makeText((Context) mShopActivity, "Billing is not ready", Toast.LENGTH_LONG).show();
         }
     }
-
 
     @Override
     public void onPurchasesUpdated(@NonNull BillingResult billingResult, @Nullable List<Purchase> listPurchases) {
@@ -219,11 +190,7 @@ public class ShopActivityPresenter extends BasePresenter implements PurchasesUpd
                     Toast.makeText((Context) mShopActivity, "You've purchased the fantasy choices", Toast.LENGTH_LONG).show();
                     break;
             }
-
-
-
         }
-
     }
 
     //AsyncTask FOR LOAD AD BANNER

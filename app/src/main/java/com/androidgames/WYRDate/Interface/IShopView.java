@@ -1,6 +1,5 @@
 package com.campfiregames.WYRDate.Interface;
 
-import android.content.Context;
 import android.view.View;
 
 import com.google.android.gms.ads.AdRequest;

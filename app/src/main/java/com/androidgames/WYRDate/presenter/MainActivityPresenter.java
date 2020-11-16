@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
@@ -14,7 +13,6 @@ import androidx.annotation.Nullable;
 
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingClientStateListener;
-import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesUpdatedListener;
@@ -85,30 +83,15 @@ public class MainActivityPresenter extends BasePresenter {
         setOnClickListenerRewardedAdButton();
         new LoadAds().execute();
 
-
-        //TEMPORAL -----------------------------
-        /*
-        skuList = new ArrayList<>();
-        skuList.add("hot_choice");
-        skuList.add("fantasy_choice");*/
-
         setupBillingClient();
-
     }
 
-
-
-
-
-
-
     public void setupBillingClient() {
-
         billingClient = BillingClient.newBuilder((Context) mActivity)
                 .setListener(new PurchasesUpdatedListener() {
                     @Override
                     public void onPurchasesUpdated(@NonNull BillingResult billingResult, @Nullable List<Purchase> list) {
-
+                        setupBillingClient();
                     }
                 })
                 .enablePendingPurchases()
@@ -119,17 +102,14 @@ public class MainActivityPresenter extends BasePresenter {
             public void onBillingSetupFinished(@NonNull BillingResult billingResult) {
                 if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                     Toast.makeText((Context) mActivity, "Success to connect Billing", Toast.LENGTH_LONG).show();
-
                     loadAllSku();
                 } else {
-
-                    Toast.makeText((Context) mActivity, "xbcvxbvxcbvcxbvcxbvcx" + billingResult, Toast.LENGTH_LONG).show();
+                    Toast.makeText((Context) mActivity, "Something went wrong!" + billingResult, Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onBillingServiceDisconnected() {
-
                 Toast.makeText((Context) mActivity, "You are disconnected Billing", Toast.LENGTH_LONG).show();
             }
         });
@@ -137,7 +117,6 @@ public class MainActivityPresenter extends BasePresenter {
 
     private void loadAllSku() {
         if (billingClient.isReady()) {
-
             ArrayList<String> skuList = new ArrayList<>();
             skuList.add("hot_choice");
             skuList.add("fantasy_choice");
@@ -151,42 +130,10 @@ public class MainActivityPresenter extends BasePresenter {
                 @Override
                 public void onSkuDetailsResponse(@NonNull BillingResult billingResult, @Nullable List<SkuDetails> list) {
                     if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK && list != null) {
-
                         purchases = billingClient.queryPurchases(BillingClient.SkuType.INAPP).getPurchasesList();
-
-                        /*for (final SkuDetails details : list) {
-
-
-                            if (details.getSku().equals(skuList.get(0))) {
-
-                                Toast.makeText((Context) mActivity, "dentro de hot_choices", Toast.LENGTH_LONG).show();
-
-                                if (purchases != null && mInteractor.isProductOwned(details.getSku(), purchases)) {
-
-
-
-                                } else {
-
-
-                                }
-                            } else if (details.getSku().equals(skuList.get(0))) {
-
-                                Toast.makeText((Context) mActivity, "Dentro de fantasy_choice", Toast.LENGTH_LONG).show();
-
-                                if (purchases != null && mInteractor.isProductOwned(details.getSku(), purchases)) {
-
-
-                                } else {
-
-
-
-                                }
-                            }
-                        }*/
                     } else {
-                        Toast.makeText((Context) mActivity, "Something go wrong!", Toast.LENGTH_LONG).show();
+                        Toast.makeText((Context) mActivity, "Something went wrong!", Toast.LENGTH_LONG).show();
                     }
-
                 }
             });
         } else {
@@ -194,17 +141,6 @@ public class MainActivityPresenter extends BasePresenter {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-    // METODOS FINALIZADOS --------------------------------------------------------------------------
     @Override
     public void onStart() {
         PopUpDialog.incrementSessionToShowRatingDialogIfAllowed((Context) mActivity);
@@ -224,15 +160,12 @@ public class MainActivityPresenter extends BasePresenter {
         mActivity.setOnCheckedHot(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
                 if (mInteractor.isProductOwned("hot_choice", purchases)) {
                     addOrRemoveDeck(b, "hot");
                 } else {
                     compoundButton.setChecked(false);
                     Toast.makeText((Context) mActivity, "You don't have hot deck!", Toast.LENGTH_LONG).show();
                 }
-
-                //addOrRemoveDeck(b, "hot");
             }
         });
     }
@@ -241,15 +174,12 @@ public class MainActivityPresenter extends BasePresenter {
         mActivity.setOnCheckedFantasy(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
                 if (mInteractor.isProductOwned("hot_choice", purchases)) {
                     addOrRemoveDeck(b, "fantasy");
                 } else {
                     compoundButton.setChecked(false);
                     Toast.makeText((Context) mActivity, "You don't have fantasy deck!", Toast.LENGTH_LONG).show();
                 }
-
-                //addOrRemoveDeck(b, "fantasy");
             }
         });
     }
@@ -525,18 +455,4 @@ public class MainActivityPresenter extends BasePresenter {
             mActivity.loadAd(adRequest);
         }
     }
-    // METODOS FINALIZADOS --------------------------------------------------------------------------
-
-
-
-
-    //TEMPORAL -----------------------------------------------------------------------------------------
-    @Override
-    public void onPause() {
-        //mInteractor.updateClicksMap(sessionClicks);
-        super.onPause();
-        //onDestroy();
-    }
-
-    //FIN TEMPORAL -----------------------------------------------------------------------------------------
 }

@@ -176,4 +176,12 @@ public class MainActivityInteractor {
         return isProductOwned;
     }
 
+    public boolean HotDeckIsEmpty() {
+        return hotList.isEmpty();
+    }
+
+    public boolean FantasyDeckIsEmpty() {
+        return fantasyList.isEmpty();
+    }
+
 }

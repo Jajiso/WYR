@@ -46,7 +46,7 @@ public class FireBaseManager {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                             ArrayList<Object> objList = (ArrayList<Object>) documentSnapshot.getData().get("rewardedAd");
-                            Object obj = objList.get(UtilsTools.generateRamdomNumber(objList.size() - 1) );
+                            Object obj = objList.get(UtilsTools.generateRandomNumber(objList.size() - 1) );
                             String json = JSONManager.setObjectToJson(obj);
                             Scenario s = JSONManager.getScenarioFromJsonObject(json);
                             callback.onCallback(s);
@@ -131,23 +131,4 @@ public class FireBaseManager {
         }
         return null;
     }
-
-
-
-    //POR HACER Y TEMPORAL ------------------------------------------------------------------------------------
-
-
-    public static void setPurchaseTokenToDB(Map<String, Object> token) {
-        FirebaseFirestore.getInstance().collection("purchases")
-                .document("purchases")
-                .update(token);
-    }
-
-    public static boolean purchaseTokenExist(String token) {
-
-        return false;
-    }
-
-    //FIN POR HACER Y TEMPORAL ------------------------------------------------------------------------------------
-
 }

@@ -48,29 +48,17 @@ public class Situations {
         return situation.size();
     }
 
-    public Scenario nextScenario() {
+    public Scenario nextScenario()
+    {
         if (situation.size() == 0)
         {
             this.situation = (ArrayList<Scenario>) this.situationRemoved.clone();
             situationRemoved.removeAll(situationRemoved);
-            //Pasamos el Garbage collector para limpiar la memoria RAM
-            Runtime.getRuntime().gc(); //Tambien se puede llamar de laa siguiente forma System.gc();
         }
-        int randomScenario = UtilsTools.generateRamdomNumber(situation.size());
+        int randomScenario = UtilsTools.generateRandomNumber(situation.size());
         Scenario result = situation.get(randomScenario);
         situationRemoved.add(result);
         situation.remove(randomScenario);
         return result;
     }
-
-    //TEMP -----------------------------------------------------------------------------------------
-    @Override
-    public String toString(){
-        String r = "";
-        for (Scenario s: situation) {
-            r = s.toString()+"\n";
-        }
-        return r;
-    }
-
 }

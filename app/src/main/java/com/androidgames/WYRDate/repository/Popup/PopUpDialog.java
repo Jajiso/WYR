@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -51,10 +50,8 @@ public final class PopUpDialog {
     private int getId(String nameId) {
         return context.getResources().getIdentifier(nameId, "id", context.getPackageName());
         /*
-         * Way to use this method
-         *
-         * view.findViewById(getId("BUTTON_NAME"))
-         * */
+         * Way to use this method - view.findViewById(getId("BUTTON_NAME"))
+        */
     }
 
     public void showDialog() {
@@ -74,18 +71,15 @@ public final class PopUpDialog {
     }
 
     private void showCustomDialog() {
-        //BUILDER DE DIALOGO
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setCancelable(true);
         builder.setView(params.getLayout());
 
-        //CREAMOS Y MOSTRAMOS EL DIALOGO
         dialog = builder.create();
         dialog.show();
     }
 
     private void showRatingDialog() {
-        //BUILDER DE DIALOGO
         final AlertDialog.Builder builder = new AlertDialog.Builder(context)
                 .setCancelable(true)
                 .setView(params.getLayout());
@@ -113,7 +107,6 @@ public final class PopUpDialog {
             }
         });
 
-        //CREAMOS Y MOSTRAMOS EL DIALOGO
         dialog = builder.create();
         dialog.show();
     }

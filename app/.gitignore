@@ -1,1 +1,7 @@
 /build
+/debug
+/release
+/libs
+/src/androidTest
+/src/test
+google-services.json
